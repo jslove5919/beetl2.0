@@ -42,8 +42,10 @@ public class Test {
 		List list = new ArrayList();
 		list.add(null);
 		list.add(new TestUser("abc"));
+		
 		HashMap map = new HashMap();
 		map.put("key", 123);
+		gt.enableStrict();
 
 		for (int i = 0; i < 1; i++) {
 
@@ -51,6 +53,7 @@ public class Test {
 
 			t.binding("user", new TestUser("jo"));
 			t.binding("id", 2);
+			t.binding("list", list);
 
 			ByteArrayOutputStream bs = new ByteArrayOutputStream();
 			try {
